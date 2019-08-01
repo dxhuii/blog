@@ -5,6 +5,7 @@
 ## hashids 服务使用
 
 > /lib/extend/hashids/Hashids.php
+
 ```php
 <?php
 
