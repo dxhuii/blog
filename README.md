@@ -74,3 +74,89 @@ if (!$result) {
     return json(['msg' => "验证码错误", 'rcode' => -2]);
 }
 ```
+## JWT 验证
+- /lib/user/controller/Api.php
+```php
+
+    // 引用 
+    $auth = $user->createAccessToken($userinfo);
+    $info['user']['user_id'] = $userinfo['user_id'];
+    $info['user']['user_name'] = $userinfo['user_name'];
+    $info['user']['user_nickname'] = !$userinfo['user_nickname'] ? $userinfo['user_nickname'] : $userinfo['user_name'];
+    $info['user']['user_email'] = $userinfo['user_email'];
+    $info['user']['user_isemail'] = $userinfo['user_isemail'];
+    $info['user']['user_last_login_time'] = $userinfo['user_last_login_time'];
+    $info['auth'] = $auth;
+    $info['token'] = $this->createJwt($info['user']);
+
+
+    public function createJwt($user)
+    {
+        $key = md5('plain'); //jwt的签发密钥，验证token的时候需要用到
+        $time = time(); //签发时间
+        $expire = $time + 14400; //过期时间
+        $token = array(
+            "data" => $user,
+            "iss" => "https://www.99496.com", //签发组织
+            "aud" => "https://www.99496.com", //签发作者
+            "iat" => $time,
+            "nbf" => $time,
+            "exp" => $expire
+        );
+        $jwt = JWT::encode($token, $key);
+        return $jwt;
+    }
+```
+## 验证 /lib/home/controller/User.php
+```php
+    public function _initialize()
+    {
+        parent::_initialize();
+        $this->checkToken();
+    }
+
+    public function checkToken()
+    {
+        $header = Request::instance()->header();
+        if (empty($header['authorization'])){
+            echo json_encode([
+                'status' => 1002,
+                'msg' => 'Token不存在,拒绝访问'
+            ]);
+            exit;
+        }else{
+            $checkJwtToken = $this->verifyJwt($header['authorization']);
+            if ($checkJwtToken['status'] == 1001) {
+                return true;
+            }
+        }
+    }
+
+    //校验jwt权限API
+    protected function verifyJwt($jwt)
+    {
+        $key = md5('plain');
+        // JWT::$leeway = 3;
+        try {
+            $jwtAuth = json_encode(JWT::decode($jwt, $key, array('HS256')));
+            $authInfo = json_decode($jwtAuth, true);
+            $msg = [];
+            if (!empty($authInfo['data']['user_id'])) {
+                $msg = [
+                    'status' => 1001,
+                    'msg' => 'Token验证通过'
+                ];
+            } else {
+                $msg = [
+                    'status' => 1002,
+                    'msg' => 'Token验证不通过,用户不存在'
+                ];
+            }
+            return $msg;
+        } catch (Exception $e) {
+            return $e;
+        }
+    }
+```
+## 使用
+- 接口调用的时候，接口传入 header: { authorization: 'xxxxx' }
