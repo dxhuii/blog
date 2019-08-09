@@ -74,7 +74,8 @@ if (!$result) {
     return json(['msg' => "验证码错误", 'rcode' => -2]);
 }
 ```
-## JWT 验证
+## JWT 验证 
+> https://199508.com/post/2034
 - /lib/user/controller/Api.php
 ```php
 
