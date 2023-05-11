@@ -38,6 +38,10 @@
   },
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
+  // "window.autoDetectColorScheme": true,
+  // "window.dialogStyle": "custom",
+  // "window.nativeTabs": true, // this is great, macOS only
+  // "window.titleBarStyle": "custom",
   "workbench.editor.closeOnFileDelete": true,
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.editor.limit.enabled": true,
