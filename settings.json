@@ -95,12 +95,6 @@
     "enable": true
   },
   "eslint.quiet": true,
-  "eslint.rules.customizations": [
-    {
-      "rule": "@stylistic/*",
-      "severity": "off"
-    }
-  ],
   "eslint.validate": [
     "javascript",
     "typescript",
@@ -279,8 +273,5 @@
   "vue.codeActions.savingTimeLimit": 2000,
   "vue.complete.casing.status": false,
   "diffEditor.ignoreTrimWhitespace": false,
-  "terminal.integrated.defaultProfile.windows": "Git Bash",
-  "debug.javascript.defaultRuntimeExecutable": {
-    "pwa-node": "node"
-  }
+  "terminal.integrated.defaultProfile.windows": "Git Bash"
 }
