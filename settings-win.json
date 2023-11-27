@@ -1,5 +1,6 @@
 {
   "workbench.editor.tabCloseButton": "left",
+  "workbench.colorTheme": "Vitesse Dark",
   "workbench.iconTheme": "vscode-icons",
   "workbench.list.smoothScrolling": true,
   "workbench.preferredDarkColorTheme": "Vitesse Dark",
@@ -8,11 +9,10 @@
   "workbench.startupEditor": "newUntitledFile",
   "workbench.tree.expandMode": "singleClick",
   "workbench.tree.indent": 10,
-  "editor.fontFamily": "'Monaspace Krypton Var', Input Mono, Fira Code, FiraCode Nerd Font, '更纱黑体 SC', '微软雅黑', monospace",
-  // "editor.fontFamily": "'Monaspace Krypton ExtraLight', Input Mono, Fira Code , '微软雅黑', monospace",
-  // "editor.fontWeight": "200",
-  // "editor.fontLigatures": true,
-  "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'calt', 'dlig'",
+  // "editor.fontFamily": "'Monaspace Krypton Var', Input Mono, Fira Code, FiraCode Nerd Font, '更纱黑体 SC', '微软雅黑', monospace",
+  // "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'calt', 'dlig'",
+  "editor.fontFamily": "Input Mono, Fira Code, FiraCode Nerd Font, '更纱黑体 SC', '微软雅黑', monospace",
+  "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'zero', 'onum'",
   "editor.fontSize": 13,
 
   // Editor
@@ -179,7 +179,7 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "//": "Last update at 2023/11/13 21:44:44",
+    "//": "Last update at 2023/11/27 20:13:12",
     "*.asax": "$(capture).*.cs, $(capture).*.vb",
     "*.ascx": "$(capture).*.cs, $(capture).*.vb",
     "*.ashx": "$(capture).*.cs, $(capture).*.vb",
@@ -210,7 +210,7 @@
     "*.resx": "$(capture).*.resx, $(capture).designer.cs, $(capture).designer.vb",
     "*.tex": "$(capture).acn, $(capture).acr, $(capture).alg, $(capture).aux, $(capture).bbl, $(capture).blg, $(capture).fdb_latexmk, $(capture).fls, $(capture).glg, $(capture).glo, $(capture).gls, $(capture).idx, $(capture).ind, $(capture).ist, $(capture).lof, $(capture).log, $(capture).lot, $(capture).out, $(capture).pdf, $(capture).synctex.gz, $(capture).toc, $(capture).xdv",
     "*.ts": "$(capture).js, $(capture).d.ts.map, $(capture).*.ts, $(capture)_*.js, $(capture)_*.ts",
-    "*.tsx": "$(capture).ts, $(capture).*.tsx, $(capture)_*.ts, $(capture)_*.tsx, $(capture).less, $(capture).module.less",
+    "*.tsx": "$(capture).ts, $(capture).*.tsx, $(capture)_*.ts, $(capture)_*.tsx, $(capture).less, $(capture).module.less, $(capture).scss, $(capture).module.scss",
     "*.vbproj": "*.config, *proj.user, appsettings.*, bundleconfig.json",
     "*.vue": "$(capture).*.ts, $(capture).*.js, $(capture).story.vue",
     "*.xaml": "$(capture).xaml.cs",
@@ -221,7 +221,7 @@
     ".gitignore": ".gitattributes, .gitmodules, .gitmessage, .mailmap, .git-blame*",
     ".project": ".classpath",
     "BUILD.bazel": "*.bzl, *.bazel, *.bazelrc, bazel.rc, .bazelignore, .bazelproject, WORKSPACE",
-    "CMakeLists.txt": "*.cmake, *.cmake.in, .cmake-format.yaml, CMakePresets.json",
+    "CMakeLists.txt": "*.cmake, *.cmake.in, .cmake-format.yaml, CMakePresets.json, CMakeCache.txt",
     "Cargo.toml": ".clippy.toml, .rustfmt.toml, cargo.lock, clippy.toml, cross.toml, rust-toolchain.toml, rustfmt.toml",
     "Dockerfile": "*.dockerfile, .devcontainer.*, .dockerignore, docker-compose.*, dockerfile*",
     "I*.cs": "$(capture).cs",
@@ -273,12 +273,9 @@
   "vsicons.dontShowNewVersionMessage": true,
   "vue.complete.casing.status": false,
   "diffEditor.ignoreTrimWhitespace": false,
-  "terminal.integrated.defaultProfile.windows": "PowerShell",
-  "terminal.integrated.fontFamily": "'Monaspace Krypton Var', Input Mono, Fira Code, FiraCode Nerd Font, '更纱黑体 SC', '微软雅黑', monospace",
   "typescript.updateImportsOnFileMove.enabled": "never",
   "security.allowedUNCHosts": [
     "wsl.localhost"
   ],
   "workbench.sideBar.location": "right",
-  "workbench.colorTheme": "Theme Darker"
 }
